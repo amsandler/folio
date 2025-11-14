@@ -6,6 +6,7 @@
 api/
 temp/
 data/
+test/
 *_files/
 *.csv
 *.rds
@@ -19,3 +20,5 @@ data/
 renv.lock
 renv/
 .Renviron
+
+/.quarto/
