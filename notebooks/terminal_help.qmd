@@ -1,0 +1,429 @@
+---
+title: "Terminal Help"
+format:
+  html:
+    toc: true
+    code-fold: true
+    df-print: paged
+    embed-resources: true
+---
+
+
+## Command Line Interface
+
+A command-line interface is a means of interacting with software via text formatted inputs. A program that implements such a text interface is called a command-line interpreter, command processor, or shell. The various Unix shells include sh, ksh, csh, tcsh, zsh, Bash, etc. The Macintosh operating system macOS is based on a Unix-like operating system. By running the emulator program called Terminal, a Mac user can access a Unix-like command-line interface. To access navigate to **/System/Applications/Utilities/Terminal.app**.
+
+#### Shell Operation
+
+The following is a brief description of the shell’s operation when it reads and executes a command. Basically, the shell does the following:
+
+1. Reads its input from a file or from the user’s terminal.
+1. Breaks the input into words and operators, obeying the quoting rules and performs alias expansion. These tokens are separated by metacharacters.
+1. Parses the tokens into simple and compound commands.
+1. Performs the various shell expansions, breaking the expanded tokens into lists of filenames and commands and arguments.
+1. Performs any necessary redirections and removes the redirection operators and their operands from the argument list.
+1. Executes the command.
+1. Optionally waits for the command to complete and collects its exit status.
+
+### Syntax structure
+
+``` bash
+command [arguments]
+```
+
+-   `command` is a utility or program function.
+
+-   `arguments` are parameters, inputs, or options (if any) used by the `command` function.
+
+::: panel-tabset
+## Example 1
+
+``` bash
+man man
+```
+
+The `man` command displays manual documentation pages. In this example, it displays the manual for the `man` command. Enter `q` to exit the manual.
+
+## Example 2
+
+``` bash
+pwd
+```
+
+Not all commands have or need arguments. The `pwd` command returns the present working directory.
+:::
+
+-   `flags` are a class of argument with a single or double hyphen prefix.
+
+| Option           | Description                       |
+|------------------|-----------------------------------|
+| `-[short_flags]` | May be consecutive or combined    |
+| `--[long_flags]` | Descriptive but can’t be combined |
+
+::: panel-tabset
+## Example 1
+
+``` bash
+git --version
+```
+
+Git is a free and open source distributed version control system. The long flag `--version` prints the Git suite version that the git program came from.
+
+## Example 2
+
+``` bash
+ls
+ls -a
+ls -a -l
+ls -al
+```
+
+The `ls` command lists directory contents. The short flag `-a` indicates the `ls` command will include hidden directory contents names that begin with a dot. The short flag `-l` indicates the `ls` command will list files in long format.
+:::
+
+### Metacharacters
+
+A character that, when unquoted, separates words.
+
+|  |  |
+|------|----------------------------|
+| `newline`  | End of execution operator  |
+| `|`  | Pipe operator   |
+| `&`  | Asynchronous list termination operator  |
+| `;` | Sequential list termination operator  |
+| `( )`  | Group list operator |
+| `<`  | Input redirect operator    |
+| `>`  | Output redirect operator   |
+| `#`  | Comment   |
+
+### Operators
+
+Operators contain at least one unquoted metacharacter.
+
+#### Control Operators
+
+A token that performs a control function.
+
+|  |  |
+|------|----------------------------|
+| `|`  |  Sequence commands in pipeline |
+|       `|&` |  Pipe shorthand for `2>&1 |` |
+| `&`  | Execute command in the background  |
+| `;` | End line |
+| `&&` | Logical AND list operator  |
+| `||`  | Logical OR list operator  |
+|      `;;` |  Case statement termination |
+|      `;&` |  Case statement termination |
+|      `;;&` |  Case statement termination |
+| `( )`  | Create a subshell grouping  |
+
+#### Redirection Operator
+
+|  |  |
+|------|----------------------------|
+| `<`  | Input redirect operator    |
+| `>`  | Output redirect operator   |
+|      `>|`  |   |
+| `<<`  | Here-document redirect |
+|       `<<-`  |  Here-document  strip leading tab characters |
+| `<<<`  | Here-strings redirect |
+| `>>` | Output append operator     |
+| `<&`  |  Duplicate input file descriptor |
+| `>&`  |  Duplicate output file descriptor |
+|       `<&-`  |  Input file descriptor mover |
+|       `>&-`  |  Output file descriptor mover |
+| `<>`  | Open File descriptor  |
+
+
+### Reserved Words
+
+A character that, when unquoted, separates words.
+
+|  |  |
+|------|----------------------------|
+| `for`  |  Looping Construct |
+| `while`  | Looping Construct  |
+| `until`  | Looping Construct  |
+| `if`  |  Conditional Construct |
+| `select`  | Conditional Construct  |
+| `case`  | Conditional Construct  |
+| `[[	]]`  | Conditional Expression expression  |
+| `(( ))`  | Conditional Arithmetic expression  |
+| `( )`  |  Grouping list (subshell environment)   |
+| `{ ; }`  |  Grouping list (current shell environment)   |
+|      `in`  | Compound Construct (`case`, `select`, or `for`) |
+|      `do`  | Compound Construct (`for`, `while`, `select`, or `until` )  |
+|      `done`  |  Looping Compound Construct (`for`, `while`, or `until` )  |
+|      `then`  |  Conditional Compound Construct (`if`)  |
+|      `elif`  |  Conditional Compound Construct (`if`)   |
+|      `else`  |  Conditional Compound Construct (`if`)   |
+|      `fi`  |  Conditional Compound Construct (`if`)   |
+|      `esac`  |  Conditional Compound Construct (`case`)    |
+| `coproc`  | Coprocesses (compound asynchronous execution) |
+| `time`  |  Timing statistic |
+| `function`  | Compound Grouping Function |
+| `!`  | Bang  |
+
+
+Escape Character
+A non-quoted backslash ‘\’ is the Bash escape character. It preserves the literal value of the next character that follows, removing any special meaning it has, with the exception of newline.
+
+
+Special Parameters
+The shell treats several parameters specially. These parameters may only be referenced; assignment to them is not allowed.
+
+|  |  |
+|------|----------------------------|
+| `$*`  |  |
+| `$@`  |  |
+| `$#`  |  |
+| `$-`  |  |
+| `$$`  |  |
+| `$!`  |  |
+| `$0`  |  |
+
+
+|  |  |
+|------|----------------------------|
+| `%`  | Modulus operator           |
+| `&&` | Logical AND                |
+| `||` | Logical OR                 |
+| `!`  | Logical NOT                |
+
+
+
+|  |  |
+|------|----------------------------|
+| `*`   | Wild card                  |
+| `?`   | Single character wild card |
+| `[…]` | Bracket expression         |
+
+
+
+Within a bracket expression, character classes can be specified using the syntax [:class:], where class is one of the following classes defined in the POSIX standard:
+
+|  |  |
+|------|----------------------------|
+| `[:alnum:]`  |   |
+| `[:alpha:]`  |   |
+| `[:ascii:]`  |   |
+| `[:blank:]`  |   |
+| `[:cntrl:]`  |   |
+| `[:digit:]`  |   |
+| `[:graph:]`  |   |
+| `[:lower:]`  |   |
+| `[:print:]`  |   |
+| `[:punct:]`  |   |
+| `[:space:]`  |   |
+| `[:upper:]`  |   |
+| `[:word:]`  |   |
+| `[:xdigit:]`  |   |
+
+
+
+
+
+### Directories
+
+|  |  |
+|--------|---------------------------|
+| `/`    | Root directory            |
+| `.`    | Current directory         |
+| `..`   | Parent directory          |
+| `~`    | Home directory (`$HOME`)  |
+| `~+`   | present working directory (`$PWD`) |
+| `~-`   | previous present working directory |
+
+
+## Control Keystrokes
+
+### Movement
+
+|  |  |
+|---------------------|---------------------------------------------|
+| `Ctrl + a`          | Move cursor to start of line                |
+| `Ctrl + e`          | Move cursor to end of line                  |
+| `Ctrl + b`          | Cursor back (left) one character            |
+|      `Left Arrow`   |                                             |
+| `Ctrl + f`          | Cursor forward (right) one character        |
+|      `Left Arrow`   |                                             |
+| `Ctrl + xx`         | Jump to start of line and toggle back again |
+| `Opt + Left Arrow`  | Jump one word back                          |
+| `Opt + Right Arrow` | Jump one word forward                       |
+
+### Edit
+
+|  |  |
+|----------------------|-----------------------------------------|
+| `Ctrl + i`           | Auto complete command                   |
+|      `Tab`           |                                         |
+| `Ctrl + h`           | Backspace                               |
+|      `Delete`        |                                         |
+| `Ctrl + d`           | Forward delete character under cursor   |
+|      `Fn + Delete`   |                                         |
+| `Ctrl + w`           | Cut one word before cursor to clipboard |
+|      `Esc + Delete`  |                                         |
+| `Ctrl + k`           | Cut line after cursor to clipboard      |
+| `Ctrl + u`           | Cut line to clipboard                   |
+| `Ctrl + y`           | Paste from clipboard (a.k.a yank)       |
+| `Ctrl + -`           | Undo                                    |
+| `Ctrl + l`           | Clear terminal screen                   |
+|      `Cmd + k`       |                                         |
+|      `clear + ENTER` |                                         |
+| `Cmd + l`            | Clear screen of previous command        |
+
+### Process
+
+|  |  |
+|---------------------|------------------------------------|
+| `Ctrl + j`          | Enter                              |
+| `Ctrl + c`          | Cancel a command (interrupt)       |
+| `Ctrl + g`          | Abort current action and ring bell |
+| `Ctrl + s`          | Stop command output                |
+| `Ctrl + g`          | Resume command output              |
+| `Ctrl + q`          | Cancel a command (interrupt)       |
+| `Ctrl + d`          | Exit terminal                      |
+|      `exit + ENTER` |                                    |
+
+### History
+
+|  |  |
+|-------------------|---------------------------------|
+| `Ctrl + p`        | Show previous command           |
+|      `Up Arrow`   |                                 |
+| `Ctrl + n`        | Show next command               |
+|      `Down Arrow` |                                 |
+| `Ctrl + r`        | Search within previous commands |
+
+### Misc.
+
+|  |  |
+|------------|-------------------------------------------------|
+| `Ctrl + t` | Transpose previous two characters               |
+| `Esc + t`  | Transpose previous two words                    |
+| `Esc + u`  | UPPER capitalize under cursor to end of word    |
+| `Esc + l`  | lower capitalize under cursor to end of word    |
+| `Esc + c`  | Sentence capitalize under cursor to end of word |
+
+## Common commands
+
+### System Info
+
+|  |  |
+|---------------|----------------------------------------------------|
+| `whoami`      | Show current user name                             |
+| `who`         | Show who is on the system                          |
+| `id -un`      | Show user identity                                 |
+| `w`           | Show who is logged in and what they are doing      |
+| `date`        | Show current time and date                         |
+| `cal`         | Show current calendar                              |
+| `echo $SHELL` | Show name of shell interpreter                     |
+| `echo $USER`  | Show name of current user                          |
+| `echo $HOME`  | Show home directory of current user                |
+|      `echo ~` |                                                    |
+| `echo $PWD`   | Show path of current working directory             |
+| `echo $PATH`  | Show list of directories shell will search through |
+| `printenv`    | Show list of all environment variables             |
+
+### System Navigation
+
+|  |  |
+|---------------------|---------------------------------------------------|
+| `pwd` | Show current directory stack from root |
+| `dirs` | Show current directory stack from home |
+| `ls` | List current directory contents |
+| `cd [directory_path]` | Change current directory to new path location |
+|      `cd` | Change current directory to home |
+|      `cd ~` |  |
+|      `cd ..` | Change current directory to parent directory |
+|      `cd ../..` | Change current directory to grandparent directory |
+|      `cd /` | Change current directory to root |
+|      `cd -` | Change current directory to previous directory |
+| `find [directory] -name [object]` | Find the location of an object |
+
+### File Manipulation
+
+| Option | Description |
+|---------------------|---------------------------------------------------|
+| `open [path]` | Open a file, directory, or URL |
+| `mkdir [directory]` | Create a new directory |
+|      `mkdir -p [directory_path]` |  |
+| `touch [file_name(s)]` | Create a new file |
+| `cp [source_file]   [target_file]` | Copy a file from one directory to another |
+| `mv [source_file] [target_file]` | Move/rename a file from one directory to another |
+| `ln -s [source_path] [sym_name]` | Create a symbolic link |
+| `rm [file]` | Remove a file |
+|      `rm -i [file]` | Remove a file but request confirmation |
+|      `rm -r [directory]` | Remove a directory |
+|      `rm -rf [directory]` | Remove a file without confirmation prompts |
+|      `rm ./*` | Remove everything in current directory (Caution!) |
+| `cat [file_names]` | Print the file contents |
+|      `cat >> [file_name] ENTER` `[text] Ctrl + D` | Append text to file |
+|      `cat [source_file] >> [target_file]` | Append file contents to file |
+|      `cat > [file_name] ENTER` `[text] Ctrl + D` | Create a new file and add file text |
+| `> [file_name] ENTER` `[text] Ctrl + D` | Overwrite file text |
+| `echo [text] > [file_name]` | Write text to file |
+|      `echo [text] >> [file_name]` | Append text to file |
+| `less [file_name]` |  |
+| `head [file_name]` |  |
+| `tail [file_name]` |  |
+| `nano [file_name]` |  |
+
+### History
+
+| Option                 | Description                             |
+|------------------------|-----------------------------------------|
+| `history`              | List command history index              |
+|      `![index_number]` | Rerun command by history index number   |
+|      `!!`              | Run the last command again              |
+|      `!-[number]`      | Rerun command n lines back              |
+|      `![string]`       | Rerun last command starting with string |
+
+## Misc.
+
+| Option                     | Description                  |
+|----------------------------|------------------------------|
+| `grep`                     |                              |
+| `printf`                   |                              |
+| `tar`                      |                              |
+| `gzip`                     |                              |
+| `tmux`                     |                              |
+| `ssh`                      |                              |
+| `sudo`                     |                              |
+| `bc`                       | Basic calculator             |
+|      `quit`                | Exit calculator              |
+| `bc <<< ‘[expression]’`    | In line basic calculator     |
+| `expr [expression]`        | Direct expression evaluation |
+| `echo $(( [expression] ))` |                              |
+
+### Special Parameters
+
+| Option              | Description                      |
+|---------------------|----------------------------------|
+| `$([command])`      | Command substitution             |
+| `$(( expression ))` | Arithmetic expression evaluation |
+| `[command] &`       | Run command in background        |
+
+## Git
+
+| Option | Description |
+|--------|-------------|
+| `git`  |             |
+
+## Resources
+
+-   <https://www.gnu.org/software/bash/manual/bash.html>
+
+-   <https://www.man7.org/linux/man-pages/man1/intro.1.html>
+
+-   <https://mywiki.wooledge.org/BashGuide>
+
+-   <https://devhints.io/bash>
+
+[//]: # https://unix.stackexchange.com/questions/159513/what-are-the-shells-control-and-redirection-operators
+
+
+
+
+
+
