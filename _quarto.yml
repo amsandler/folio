@@ -1,29 +1,30 @@
 project:
-  title: "Folio"
-  output-dir: temp
+  type: website
+  render:
+    - terminal_help.qmd
+  post-render: touch _site/.nojekyll
+
+website:
+  title: "Folio Landing"
+  navbar:
+    background: primary
+    left:
+      - href: README.md
+        text: Home
+      - terminal_help.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
 
 
-# _quarto.yml config was moved to project root to enable "execute-dir: project" setting.
-# Below is the original config that was used to build the GitHub website.
-# It will need to be restored if we want to update the website.
-#   render:
-#     - terminal_help.qmd
-#   post-render: touch _site/.nojekyll
-# 
-# website:
+##
+# project:
 #   title: "Folio"
-#   navbar:
-#     background: primary
-#     left:
-#       - href: terminal_help.qmd
-#         text: Home
+#   output-dir: temp
 
-# 
-# format:
-#   html:
-#     theme: cosmo
-#     css: styles.css
-#     toc: true
 
 
 
