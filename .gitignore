@@ -6,6 +6,7 @@
 api/
 temp/
 data/
+*_files/
 *.csv
 *.rds
 *.pq
