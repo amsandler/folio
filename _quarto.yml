@@ -1,11 +1,13 @@
 project:
   type: website
+  output-dir: docs
   render: 
     - notebooks/terminal_help.qmd
     - "!test/"
 
 website:
   title: "Folio Landing"
+  site-url: "https://amsandler.github.io/folio/"
   navbar:
     background: primary
     left:
@@ -16,7 +18,6 @@ website:
 format:
   html:
     theme: cosmo
-    css: styles.css
     toc: true
 
 
