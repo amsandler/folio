@@ -1,17 +1,17 @@
 project:
   type: website
-  render:
-    - terminal_help.qmd
-  post-render: touch _site/.nojekyll
+  render: 
+    - notebooks/terminal_help.qmd
+    - "!test/"
 
 website:
   title: "Folio Landing"
   navbar:
     background: primary
     left:
-      - href: README.md
+      - href: notebooks/terminal_help.qmd
         text: Home
-      - terminal_help.qmd
+      - notebooks/terminal_help.qmd
 
 format:
   html:
