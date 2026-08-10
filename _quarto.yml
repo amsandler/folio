@@ -8,12 +8,14 @@ project:
 website:
   title: "Folio Landing"
   site-url: "https://amsandler.github.io/folio/"
+  search: true
   navbar:
     background: primary
     left:
-      - href: notebooks/terminal_help.qmd
+      - href: README.md
         text: Home
-      - notebooks/terminal_help.qmd
+      - href: notebooks/terminal_help.qmd
+        text: Terminal Help
 
 format:
   html:
