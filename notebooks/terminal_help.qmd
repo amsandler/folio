@@ -421,6 +421,7 @@ Within a bracket expression, character classes can be specified using the syntax
 -   <https://devhints.io/bash>
 
 [//]: # https://unix.stackexchange.com/questions/159513/what-are-the-shells-control-and-redirection-operators
+[//]: # https://darioairoldi.github.io/Learn/20250712%20Use%20QUARTO%20doc%20for%20Github%20repos%20doc/010.001%20Deploying%20a%20Quarto%20site%20to%20GitHub%20Pages.html
 
 
 
