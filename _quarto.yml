@@ -8,7 +8,6 @@ project:
 website:
   title: "Folio Landing"
   site-url: "https://amsandler.github.io/folio/"
-  search: true
   navbar:
     background: primary
     left:
