@@ -209,37 +209,3 @@ test_court <- function(){
 
 
 
-
-##TODO: add scatter by inauguration
-##TODO: add average tenure length over time
-# Plot summary statistics 
-tc |> 
-  ggplot(data = _) +
-  geom_ribbon(aes(x=time, ymin = min_age, ymax = max_age), fill = "grey70") +
-  geom_line(aes(x=time, y=mean_age))
-
-tc |> 
-  ggplot(data = _) +
-  geom_line(aes(x=time, y=court_size))
-
-
-tc |> slice(-1) |> 
-  select(c(time, seat_0:seat_10)) |>
-  pivot_longer(!c(time)) |>
-  ggplot(data = _) + 
-  geom_point(aes(x=time, y=value, color=name))
-
-df |> 
-  ggplot(data = _) + 
-  geom_point(aes(x=start_date, y=inaug_age, color=seat)) + 
-  geom_hline(yintercept = mean(df$inaug_age))
-
-
-
-library(ggiraph)
-g <- ggplot(df, aes(x=start_date, y=inaug_age, color=seat, tooltip=name)) + 
-  geom_point_interactive()
-
-girafe(ggobj = g)
-
-
