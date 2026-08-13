@@ -1,0 +1,17 @@
+---
+title: "Landing"
+format:
+  html:
+    toc: true
+    code-fold: true
+    df-print: paged
+    embed-resources: true
+---
+
+
+# Welcome
+
+This is my portfolio landing page. 
+
+My aim is to experiment and practice building websites, notebooks, and general information for personal and public use. 
+
