@@ -7,7 +7,6 @@ api/
 temp/
 data/
 test/
-docs/site_libs/
 *_files/
 *.csv
 *.rds
