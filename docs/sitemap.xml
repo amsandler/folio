@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://amsandler.github.io/folio/README.html</loc>
-    <lastmod>2026-08-13T10:21:50.961Z</lastmod>
+    <loc>https://amsandler.github.io/folio/notebooks/landing.html</loc>
+    <lastmod>2026-08-13T13:36:39.158Z</lastmod>
+  </url>
+  <url>
+    <loc>https://amsandler.github.io/folio/notebooks/supreme_court.html</loc>
+    <lastmod>2026-08-13T13:36:36.969Z</lastmod>
   </url>
   <url>
     <loc>https://amsandler.github.io/folio/notebooks/terminal_help.html</loc>
-    <lastmod>2026-08-13T10:21:42.063Z</lastmod>
+    <lastmod>2026-08-13T13:36:35.219Z</lastmod>
   </url>
 </urlset>

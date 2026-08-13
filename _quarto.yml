@@ -2,17 +2,20 @@ project:
   type: website
   output-dir: docs
   render: 
-    - README.md
+    - notebooks/landing.qmd
     - notebooks/terminal_help.qmd
+    - notebooks/supreme_court.qmd
 
 website:
-  title: "Folio Landing"
+  title: "Folio"
   site-url: "https://amsandler.github.io/folio/"
   navbar:
     background: primary
     left:
       - href: notebooks/terminal_help.qmd
         text: Terminal Help
+      - href: notebooks/supreme_court.qmd
+        text: Supreme Court
 
 format:
   html:

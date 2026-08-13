@@ -1,10 +1,24 @@
 [
   {
-    "objectID": "README.html",
-    "href": "README.html",
-    "title": "Folio",
+    "objectID": "notebooks/landing.html",
+    "href": "notebooks/landing.html",
+    "title": "Landing",
     "section": "",
-    "text": "Folio\nWelcome.\nThis is my experimental portfolio and landing page.\nMy aim is to practice building websites, notebooks, and general information for personal and public use."
+    "text": "Welcome\nThis is my portfolio landing page.\nMy aim is to experiment and practice building websites, notebooks, and general information for personal and public use."
+  },
+  {
+    "objectID": "notebooks/supreme_court.html",
+    "href": "notebooks/supreme_court.html",
+    "title": "Supreme Court",
+    "section": "",
+    "text": "Toy example of web scrapping, data processing and visualization.\n\n\nCode\nlibrary(here)\nsource(here(\"R/supreme_court.R\"), local = (sc &lt;- new.env()))\n\n\n\n\nCode\njr &lt;- sc$call_justices_raw()\njt &lt;- sc$call_justices_tidy()\ntc &lt;- sc$call_temporal_court()\n\n\n\n\nCode\ntc |&gt;\n  ggplot(data = _) +\n  geom_ribbon(aes(x=time, ymin = min_age, ymax = max_age), fill = \"grey70\") +\n  geom_line(aes(x=time, y=mean_age))\n\n\nWarning: Removed 1 row containing missing values or values outside the scale range\n(`geom_ribbon()`).\n\n\nWarning: Removed 1 row containing missing values or values outside the scale range\n(`geom_line()`).\n\n\n\n\n\n\n\nCode\n# \n# ##TODO: add scatter by inauguration\n# ##TODO: add average tenure length over time\n# # Plot summary statistics \n# tc |&gt; \n#   ggplot(data = _) +\n#   geom_ribbon(aes(x=time, ymin = min_age, ymax = max_age), fill = \"grey70\") +\n#   geom_line(aes(x=time, y=mean_age))\n# \n# tc |&gt; \n#   ggplot(data = _) +\n#   geom_line(aes(x=time, y=court_size))\n# \n# \n# tc |&gt; slice(-1) |&gt; \n#   select(c(time, seat_0:seat_10)) |&gt;\n#   pivot_longer(!c(time)) |&gt;\n#   ggplot(data = _) + \n#   geom_point(aes(x=time, y=value, color=name))\n# \n# df |&gt; \n#   ggplot(data = _) + \n#   geom_point(aes(x=start_date, y=inaug_age, color=seat)) + \n#   geom_hline(yintercept = mean(df$inaug_age))\n# \n# \n# \n# library(ggiraph)\n# g &lt;- ggplot(df, aes(x=start_date, y=inaug_age, color=seat, tooltip=name)) + \n#   geom_point_interactive()\n# \n# girafe(ggobj = g)"
+  },
+  {
+    "objectID": "notebooks/supreme_court.html#supreme-court",
+    "href": "notebooks/supreme_court.html#supreme-court",
+    "title": "Supreme Court",
+    "section": "",
+    "text": "Toy example of web scrapping, data processing and visualization.\n\n\nCode\nlibrary(here)\nsource(here(\"R/supreme_court.R\"), local = (sc &lt;- new.env()))\n\n\n\n\nCode\njr &lt;- sc$call_justices_raw()\njt &lt;- sc$call_justices_tidy()\ntc &lt;- sc$call_temporal_court()\n\n\n\n\nCode\ntc |&gt;\n  ggplot(data = _) +\n  geom_ribbon(aes(x=time, ymin = min_age, ymax = max_age), fill = \"grey70\") +\n  geom_line(aes(x=time, y=mean_age))\n\n\nWarning: Removed 1 row containing missing values or values outside the scale range\n(`geom_ribbon()`).\n\n\nWarning: Removed 1 row containing missing values or values outside the scale range\n(`geom_line()`).\n\n\n\n\n\n\n\nCode\n# \n# ##TODO: add scatter by inauguration\n# ##TODO: add average tenure length over time\n# # Plot summary statistics \n# tc |&gt; \n#   ggplot(data = _) +\n#   geom_ribbon(aes(x=time, ymin = min_age, ymax = max_age), fill = \"grey70\") +\n#   geom_line(aes(x=time, y=mean_age))\n# \n# tc |&gt; \n#   ggplot(data = _) +\n#   geom_line(aes(x=time, y=court_size))\n# \n# \n# tc |&gt; slice(-1) |&gt; \n#   select(c(time, seat_0:seat_10)) |&gt;\n#   pivot_longer(!c(time)) |&gt;\n#   ggplot(data = _) + \n#   geom_point(aes(x=time, y=value, color=name))\n# \n# df |&gt; \n#   ggplot(data = _) + \n#   geom_point(aes(x=start_date, y=inaug_age, color=seat)) + \n#   geom_hline(yintercept = mean(df$inaug_age))\n# \n# \n# \n# library(ggiraph)\n# g &lt;- ggplot(df, aes(x=start_date, y=inaug_age, color=seat, tooltip=name)) + \n#   geom_point_interactive()\n# \n# girafe(ggobj = g)"
   },
   {
     "objectID": "notebooks/terminal_help.html",
