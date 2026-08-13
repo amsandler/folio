@@ -1,5 +1,12 @@
 [
   {
+    "objectID": "README.html",
+    "href": "README.html",
+    "title": "Folio",
+    "section": "",
+    "text": "Folio\nWelcome.\nThis is my experimental portfolio and landing page.\nMy aim is to practice building websites, notebooks, and general information for personal and public use."
+  },
+  {
     "objectID": "notebooks/terminal_help.html",
     "href": "notebooks/terminal_help.html",
     "title": "Terminal Help",

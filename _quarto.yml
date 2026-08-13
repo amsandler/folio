@@ -2,8 +2,8 @@ project:
   type: website
   output-dir: docs
   render: 
+    - README.md
     - notebooks/terminal_help.qmd
-    - "!test/"
 
 website:
   title: "Folio Landing"
@@ -11,8 +11,6 @@ website:
   navbar:
     background: primary
     left:
-      - href: README.md
-        text: Home
       - href: notebooks/terminal_help.qmd
         text: Terminal Help
 
@@ -20,13 +18,4 @@ format:
   html:
     theme: cosmo
     toc: true
-
-
-##
-# project:
-#   title: "Folio"
-#   output-dir: temp
-
-
-
 
